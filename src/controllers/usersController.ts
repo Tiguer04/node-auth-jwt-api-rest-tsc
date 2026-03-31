@@ -149,9 +149,7 @@ export const deleteUser  = async (
     res.status(200).json({message:`El usuario ${userId} ha sido exitosamente eliminado.`}).end();
   } catch (error:any) {
 
-    if (error?.code === "P2002" && error?.meta?.modelName?.includes("user")) {
-      res.status(400).json({ error: "El email ingresado ya existe." });
-    } else if(error?.code === "P2025"){
+    if(error?.code === "P2025"){
       res.status(404).json('Usuario no encontrado')
     } else{
       console.log(error);

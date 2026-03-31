@@ -14,9 +14,4 @@ app.use(express.json()) // Para que pueda leer los JSON.
 app.use('/auth', authRoutes)
 app.use('/users', usersRoutes)
 
-
-// AUTENTICACION
-
-//USERS
-
 export default app;
